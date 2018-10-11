@@ -4,9 +4,10 @@
 根据所输入的参数和文件名，显示出相应的内容，[具体内容](https://www.ibm.com/developerworks/cn/linux/shell/clutil/index.html)。
 
 ## 参数介绍
--s [number] 开始页码
--e [number] 结束页码
--l [number] 指定行数
+-s [number] 开始页码<br>
+-e [number] 结束页码<br>
+-l [number] 指定行数<br>
+-d [printer] 指定打印机打印<br>
 < [filename] 指定文件
 
 ## 运行截图
