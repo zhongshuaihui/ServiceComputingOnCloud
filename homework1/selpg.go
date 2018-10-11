@@ -31,15 +31,12 @@ func main() {
 
 func process_args() {
 	//使用flag包处理传入参数
-	//必须参数
 	//“-sNumber”（例如，“-s10”表示从第 10 页开始）
 	flag.IntVar(&startPageNumber, "s", -1, "必须指定开始页号,应当是一个正整数.")
 	//“-eNumber”（例如，“-e20”表示在第 20 页结束）
 	flag.IntVar(&endPageNumber, "e", -1, "必须指定结束页号,应当不小于开始页号.")
-	//可选参数
 	//“-lNumber”与“-f”互斥
-	//“-lNumber” 该类文本的页行数固定，例如-l72代表每页72行
-	//不加此参数默认行数为72行
+	//“-lNumber” -l72代表每页72行
 	flag.IntVar(&lineNumber, "l", 72, "确定每页的行数，默认为72行")
 	//“-f”该类型文本的页由 ASCII 换页字符（十进制数值为 12，在 C 中用“\f”表示）定界
 	flag.BoolVar(&f_Flag, "f", false, "由分页符\\f界定每页行数，使用此参数时会强制覆盖-l参数")
@@ -52,8 +49,6 @@ func process_args() {
 		lp_Flag = true
 		//管道连接
 		lp_Control = exec.Command("lp", "-d", desName)
-		//因为没有打印机连接故用cat来测试
-		//lp_Control = exec.Command("cat")
 		//指定管道输出至该程序的标准输出
 		lp_Control.Stderr = os.Stderr
 		lp_Control.Stdout = os.Stdout
