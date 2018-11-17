@@ -35,7 +35,7 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 		}
 	}
 
-	mx.HandleFunc("/api/show", showHandler(formatter)).Methods("GET")
+	mx.HandleFunc("/show", showHandler(formatter)).Methods("GET")
 	mx.PathPrefix("/unkown").Handler(NotImplementedHandler())
 	mx.HandleFunc("/", submitHandler(webRoot)).Methods("POST")
 	mx.PathPrefix("/").Handler(http.FileServer(http.Dir(webRoot + "/assets/")))
