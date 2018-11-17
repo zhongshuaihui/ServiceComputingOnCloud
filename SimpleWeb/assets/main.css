@@ -1,0 +1,15 @@
+body{
+  background-color: gray;
+  padding: 10px;
+}
+table{
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+td{
+  padding: 10px;
+  word-wrap: break-word;
+}
+tr{
+  padding: 10px;
+}
